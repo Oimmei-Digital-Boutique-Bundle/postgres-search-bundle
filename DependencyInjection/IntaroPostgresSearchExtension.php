@@ -27,7 +27,10 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
         $config = [
             'dbal' => [
                 'types' => [
-                    'tsvector' => 'Intaro\PostgresSearchBundle\DBAL\TsvectorType'
+                    'tsvector' => [
+                        'class' => 'Intaro\PostgresSearchBundle\DBAL\TsvectorType',
+                        'commented' => false
+                    ]
                 ],
                 'mapping_types' => [
                     'tsvector' => 'tsvector'
