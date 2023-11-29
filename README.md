@@ -14,7 +14,7 @@ Add PostgreSearchBundle in your composer.json:
 ```js
 {
     "require": {
-        "intaro/postgres-search-bundle": "dev-master"
+        "oi/postgres-search-bundle": "dev-master"
     }
 }
 ```
@@ -22,7 +22,7 @@ Add PostgreSearchBundle in your composer.json:
 Now tell composer to download the bundle by running the command:
 
 ``` bash
-$ php composer.phar update intaro/postgres-search-bundle
+$ php composer.phar update oi/postgres-search-bundle
 ```
 
 ### Step 2: Enable the bundle
@@ -37,7 +37,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Intaro\PostgresSearchBundle\IntaroPostgresSearchBundle(),
+        new Oi\PostgresSearchBundle\IntaroPostgresSearchBundle(),
     );
 }
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace Intaro\PostgresSearchBundle\DependencyInjection;
+namespace Oi\PostgresSearchBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
@@ -28,7 +28,7 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
             'dbal' => [
                 'types' => [
                     'tsvector' => [
-                        'class' => 'Intaro\PostgresSearchBundle\DBAL\TsvectorType',
+                        'class' => 'Oi\PostgresSearchBundle\DBAL\TsvectorType',
                         'commented' => false
                     ]
                 ],
@@ -39,10 +39,10 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
             'orm' => [
                 'dql' => [
                     'string_functions' => [
-                        'tsquery' => 'Intaro\PostgresSearchBundle\DQL\TsqueryFunction',
-                        'plainto_tsquery' => 'Intaro\PostgresSearchBundle\DQL\PlainToTsqueryFunction',
-                        'tsrank' => 'Intaro\PostgresSearchBundle\DQL\TsrankFunction',
-                        'tsheadline' => 'Intaro\PostgresSearchBundle\DQL\TsheadlineFunction'
+                        'tsquery' => 'Oi\PostgresSearchBundle\DQL\TsqueryFunction',
+                        'plainto_tsquery' => 'Oi\PostgresSearchBundle\DQL\PlainToTsqueryFunction',
+                        'tsrank' => 'Oi\PostgresSearchBundle\DQL\TsrankFunction',
+                        'tsheadline' => 'Oi\PostgresSearchBundle\DQL\TsheadlineFunction'
                     ]
                 ]
             ]

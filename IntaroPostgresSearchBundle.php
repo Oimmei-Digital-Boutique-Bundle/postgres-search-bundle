@@ -1,6 +1,6 @@
 <?php
 
-namespace Intaro\PostgresSearchBundle;
+namespace Oi\PostgresSearchBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
