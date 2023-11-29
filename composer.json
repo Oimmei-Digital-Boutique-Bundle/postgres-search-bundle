@@ -1,23 +1,26 @@
 {
-    "name": "intaro/postgres-search-bundle",
+    "name": "oi/postgres-search-bundle",
     "type": "symfony-bundle",
     "description": "Tools to use full-text search PostgreSQL in Doctrine.",
     "keywords": ["doctrine2", "symfony", "search", "postgresql"],
-    "homepage": "https://github.com/ddmaster/PostgresSearchBundle",
+    "homepage": "https://github.com/Oimmei-Digital-Boutique-Bundle/PostgresSearchBundle",
     "license": "MIT",
     "authors": [
         {
             "name": "Gruzd Sergey",
             "homepage": "https://github.com/ddmaster"
-        }
+        },
+	{
+            "name": "Andrea Cioni <andrea.cioni@oimmei.com>"
+      	}
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle" : "~3.0|^4.0|^5.0",
+        "symfony/framework-bundle" : ">=3.0",
         "doctrine/orm": ">=2.2.3"
     },
     "autoload": {
-        "psr-0": { "Intaro\\PostgresSearchBundle\\": "" }
+        "psr-0": { "Oi\\PostgresSearchBundle\\": "" }
     },
-    "target-dir": "Intaro/PostgresSearchBundle"
+    "target-dir": "Oi/PostgresSearchBundle"
 }
