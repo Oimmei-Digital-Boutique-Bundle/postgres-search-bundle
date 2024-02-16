@@ -21,7 +21,7 @@ class PlainToTsqueryFunction extends FunctionNode
         $parser->match(Lexer::T_COMMA);
         $this->queryString = $parser->StringPrimary();
 
-        if ($parser->getLexer()->lookahead['type'] == Lexer::T_COMMA) {
+        if ($parser->getLexer()->lookahead->type == Lexer::T_COMMA) {
             $parser->match(Lexer::T_COMMA);
             $this->regconfig = $parser->StringPrimary();
         }
