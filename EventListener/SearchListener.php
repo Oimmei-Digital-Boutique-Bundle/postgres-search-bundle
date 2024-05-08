@@ -11,9 +11,8 @@ class SearchListener
 {
     public function onFlush(OnFlushEventArgs $args)
     {
-        $em = $args->getEntityManager();
+        $em = $args->getObjectManager();
         $uow = $em->getUnitOfWork();
-        $changedEntities = [];
 
         foreach ($uow->getScheduledEntityInsertions() as $entity) {
             $metadata = $em->getClassMetadata(get_class($entity));
