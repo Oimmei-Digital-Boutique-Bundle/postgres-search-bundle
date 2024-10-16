@@ -17,7 +17,7 @@ class SearchListener
         foreach ($uow->getScheduledEntityInsertions() as $entity) {
             $metadata = $em->getClassMetadata(get_class($entity));
             foreach ($metadata->getFieldNames() as $field) {
-                if ($metadata->getTypeOfField($field) != 'tsvector') {
+                if (!in_array($metadata->getTypeOfField($field), ['tsvector', 'tsvector_simple'])) {
                     continue;
                 }
 
@@ -51,7 +51,7 @@ class SearchListener
 
             $metadata = $em->getClassMetadata(get_class($entity));
             foreach ($metadata->getFieldNames() as $field) {
-                if ($metadata->getTypeOfField($field) != 'tsvector') {
+                if (!in_array($metadata->getTypeOfField($field), ['tsvector', 'tsvector_simple'])) {
                     continue;
                 }
 

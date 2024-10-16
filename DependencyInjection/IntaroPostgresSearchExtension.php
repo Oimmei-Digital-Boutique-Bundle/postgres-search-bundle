@@ -18,7 +18,7 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }
 
@@ -29,11 +29,16 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
                 'types' => [
                     'tsvector' => [
                         'class' => 'Oi\PostgresSearchBundle\DBAL\TsvectorType',
-                        'commented' => false
-                    ]
+                        'commented' => false,
+                    ],
+                    'tsvector_simple' => [
+                        'class' => 'Oi\PostgresSearchBundle\DBAL\TsvectorSimpleType',
+                        'commented' => false,
+                    ],
                 ],
                 'mapping_types' => [
-                    'tsvector' => 'tsvector'
+                    'tsvector' => 'tsvector',
+                    'tsvector_simple' => 'tsvector',
                 ],
             ],
             'orm' => [
@@ -42,10 +47,10 @@ class IntaroPostgresSearchExtension extends Extension implements PrependExtensio
                         'tsquery' => 'Oi\PostgresSearchBundle\DQL\TsqueryFunction',
                         'plainto_tsquery' => 'Oi\PostgresSearchBundle\DQL\PlainToTsqueryFunction',
                         'tsrank' => 'Oi\PostgresSearchBundle\DQL\TsrankFunction',
-                        'tsheadline' => 'Oi\PostgresSearchBundle\DQL\TsheadlineFunction'
-                    ]
-                ]
-            ]
+                        'tsheadline' => 'Oi\PostgresSearchBundle\DQL\TsheadlineFunction',
+                    ],
+                ],
+            ],
         ];
 
         $container->prependExtensionConfig('doctrine', $config);

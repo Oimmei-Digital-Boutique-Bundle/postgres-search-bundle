@@ -5,6 +5,9 @@ Symfony2 bundle with tools <a target="_blank" href="http://www.postgresql.org/do
 
 Added type 'tsvector' to be used in the mapping.
 
+[OIMMEI] Aggiunto anche tipo 'tsvector_simple' nel nostro fork, identico all'originale,
+per evitare di troncare parole e nomi senza volerlo.
+
 Added functions 'to_tsquery', 'plainto_tsquery' and 'ts_rank' to be used in the DQL.
 
 ### Step 1: Download PostgreSearchBundle using composer
